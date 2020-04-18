@@ -8,6 +8,13 @@ import { FormControl, Validators } from '@angular/forms';
 })
 export class FilterFormComponent implements OnInit {
 
+  data = {
+    sortDate: new Date(),
+    sortValue: 'stars'
+  }
+  
+  sendData = {}
+
   sortControl = new FormControl('', Validators.required);
   dateControl = new FormControl('', Validators.required);
   sortData = ['stars', 'forks', 'updated']
@@ -17,6 +24,11 @@ export class FilterFormComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  test() {
+    this.sendData = this.data;
+    
   }
 
 }

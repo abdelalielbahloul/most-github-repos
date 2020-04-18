@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, Input, OnChanges, DoCheck, AfterViewChecked, AfterContentInit } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
@@ -29,21 +29,44 @@ const ELEMENT_DATA: PeriodicElement[] = [
   templateUrl: './repos.component.html',
   styleUrls: ['./repos.component.css']
 })
-export class ReposComponent implements OnInit {
+export class ReposComponent implements OnInit, OnChanges, AfterContentInit {
 
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol','actions'];
   dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
 
   constructor() { }
-
   
+
+  @Input('data') data = {
+    sortDate: new Date('YY-MM-dd'),
+    sortValue: 'stars'
+  }
+
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
   @ViewChild(MatSort, {static: true}) sort: MatSort;
 
   ngOnInit(): void {
     this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
+    this.dataSource.sort = this.sort;    
+    this.init();
   }
+
+  /**
+   * fetching data with default infos in loading of page
+   */
+  ngAfterContentInit(): void {
+    console.log("after view init", this.data);
+    
+  }
+
+  /**
+   *  fetching data after any submit of form with new infos
+   */
+  ngOnChanges(): void {
+    console.log("changed",this.data);
+    
+  }
+  
 
   filter(filterText: String) {
     this.dataSource.filter = filterText.trim().toLocaleLowerCase();
@@ -51,6 +74,13 @@ export class ReposComponent implements OnInit {
   show(element) {
     console.log(element);
     
+  }
+
+  init() {
+    this.data = {
+      sortDate: new Date(),
+      sortValue: "stars"
+    }
   }
 
 }
