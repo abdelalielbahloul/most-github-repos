@@ -1,0 +1,20 @@
+app-repos {
+    margin: 2% !important;
+    padding: 0 5% 0 5% !important;
+}
+
+.filterOptions {
+    /* align-items: center;
+    align-content: center; */
+    text-align: center;
+    padding: 2% 0 2% 0;
+}
+
+.example-full-width {
+    width: 25%;
+    margin: 0 0 0 5%;
+}
+.submit {
+    margin: 0 0 0 5%;
+
+}
