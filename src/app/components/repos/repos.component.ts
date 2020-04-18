@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild, Input, OnChanges, DoCheck, AfterViewCheck
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
+import { Moment } from 'moment';
 
 export interface PeriodicElement {
   name: string;
@@ -33,8 +34,8 @@ export class ReposComponent implements OnInit, OnChanges, AfterContentInit {
 
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol','actions'];
   dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
-
-  constructor() { }
+  
+  constructor(private moment: Moment) { }
   
 
   @Input('data') data = {
