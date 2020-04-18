@@ -35,7 +35,7 @@ export class ReposComponent implements OnInit, OnChanges, AfterContentInit {
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol','actions'];
   dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
   
-  constructor(private moment: Moment) { }
+  constructor() { }
   
 
   @Input('data') data = {
