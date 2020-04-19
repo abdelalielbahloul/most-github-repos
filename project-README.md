@@ -11,3 +11,6 @@ This Project is created using :
 1. Clone this project using `https://github.com/gemography/frontend-coding-challenge.git` and cd into
 2. Run `npm i`
 3. Run `ng serve -o` The project will run in the development mode on `http://localhost:4200/`
+
+## Images
+<img src="./assets/1.png">
