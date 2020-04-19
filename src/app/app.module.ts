@@ -9,11 +9,13 @@ import { ReposComponent } from './components/repos/repos.component';
 import { FilterFormComponent } from './components/filter-form/filter-form.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule } from "@angular/common/http";
+import { DetailsDialogComponent } from './components/details-dialog/details-dialog.component';
 @NgModule({
   declarations: [
     AppComponent,
     ReposComponent,
-    FilterFormComponent
+    FilterFormComponent,
+    DetailsDialogComponent
   ],
   imports: [
     BrowserModule,
