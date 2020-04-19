@@ -11,8 +11,8 @@ export class RepositoryService {
 
   constructor(private _http: HttpClient) { }
 
-  _getRepoIssues(sort: string, order: string, page: number): Observable<GithubAPI> {
-    const requestUrl = `${this.href}?q=repo:angular/components&sort=${sort}&order=${order}&page=${page + 1}`;
+  _getRepos(created: string, sort: string, order: string, page: number): Observable<GithubAPI> {
+    const requestUrl = `${this.href}?q=created:>${created}&sort=${sort}&order=${order}&page=${page + 1}`;
     return this._http.get<GithubAPI>(requestUrl);
   }
  

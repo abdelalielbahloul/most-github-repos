@@ -16,6 +16,7 @@ import {
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatSelectModule } from '@angular/material/select';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 const materialModules = [
   MatTableModule,
@@ -27,7 +28,8 @@ const materialModules = [
   MatButtonModule,
   MatDatepickerModule,
   MatDividerModule,
-  MatSelectModule
+  MatSelectModule,
+  MatProgressSpinnerModule
 ]
 
 @NgModule({
