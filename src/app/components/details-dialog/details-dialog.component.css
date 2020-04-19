@@ -1,0 +1,23 @@
+mat-grid-tile-header > h1 {
+    color: #000000 !important;
+    font-weight: bold !important;
+    font-size: 25px;
+}
+mat-grid-tile-header > p {
+    color: #000000 !important;
+}
+
+mat-list {
+    margin-top: -10% !important;
+
+}
+
+
+mat-grid-tile > div {
+    justify-content: baseline !important;
+}
+
+mat-grid-tile-header, mat-grid-tile-footer {
+    background-color: #ffffff !important;
+
+}

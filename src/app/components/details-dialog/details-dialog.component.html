@@ -1,0 +1,36 @@
+<div *ngIf="detailsData != null || detailsData != undefined">
+    <h1 mat-dialog-title>Details of #{{detailsData.id}}</h1>
+    <div mat-dialog-content>
+        <mat-grid-list cols="3">
+            <mat-grid-tile colspan="1">
+                <img [src]="detailsData.avatar" alt="Owner avatar">
+            </mat-grid-tile>
+            <mat-grid-tile colspan="2">
+                <mat-grid-tile-header>
+                    <h1>{{detailsData.name}}</h1>
+                </mat-grid-tile-header>
+                <mat-list>
+                    <mat-list-item> {{detailsData.description}} </mat-list-item>
+                    <mat-divider></mat-divider>
+                    <mat-list-item> <strong>License:</strong>&nbsp;&nbsp; {{detailsData.license}} </mat-list-item>
+                    <mat-divider></mat-divider>
+                    <mat-list-item> <strong>Default Branch:</strong>&nbsp;&nbsp; {{detailsData.default_branch}} </mat-list-item>
+                    <mat-divider></mat-divider>
+                    <mat-list-item> <strong>Submited:</strong>&nbsp;&nbsp; {{detailsData.submited_time}} By {{detailsData.owner_name}} </mat-list-item>
+
+                </mat-list>
+                    
+                <mat-grid-tile-footer>
+                    <mat-chip-list aria-label="Fish selection">
+                        <span style="color: #000000;font-weight: bold;">Open Issues:</span><mat-chip color="primary" selected>{{detailsData.open_issues}}</mat-chip>
+                        <span style="color: #000000;font-weight: bold;">Watchers:</span><mat-chip color="primary" selected>{{detailsData.nb_watchers}}</mat-chip>
+
+                    </mat-chip-list>
+                </mat-grid-tile-footer>
+            </mat-grid-tile>
+        </mat-grid-list>
+    </div>
+    <div mat-dialog-actions align="end">
+    <button mat-flat-button [mat-dialog-close]="true">Close</button>
+    </div>
+</div>
