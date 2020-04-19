@@ -21,7 +21,7 @@ export class ReposComponent implements OnInit, OnChanges, AfterContentInit {
   isRateLimitReached = false;
   constructor(private api: RepositoryService) { }
 
-  displayedColumns: string[] = ['name', 'owner', 'type', 'created_at', 'stargazers_count', 'open_issues_count', 'forks_count', 'language', 'actions'];
+  displayedColumns: string[] = ['name', 'owner', 'type', 'created_at', 'stargazers_count', 'open_issues_count', 'forks_count', 'language', 'size', 'actions'];
   dataSource = new MatTableDataSource(this.ELEMENT_DATA) || null;
   
   
@@ -58,7 +58,7 @@ export class ReposComponent implements OnInit, OnChanges, AfterContentInit {
     console.log(this.data);
     
     this.fetch()
-    
+    this.init()
   }
   
 

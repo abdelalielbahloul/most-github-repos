@@ -26,7 +26,7 @@ export class FilterFormComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  test() {
+  submit() {
     this.sendData = this.data;
     
   }

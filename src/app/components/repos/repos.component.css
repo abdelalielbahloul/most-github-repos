@@ -6,6 +6,10 @@ table {
     position: relative;
     min-height: 290px;
 }
+
+mat-chip {
+    pointer-events: none;
+}
   
 .example-table-container {
     position: relative;
@@ -27,15 +31,29 @@ table {
 
 }
 
-/* .chipsGreen {
-    background-color: #2CBE4E !important;
-} */
 th {
     font-weight: bold;
-    align-content: center;
 }
+
 .example-rate-limit-reached {
     color: #980000;
     max-width: 360px;
     text-align: center;
+}
+
+.m-right-xs-5 {
+    margin-right: 5px;
+}
+
+img {
+    vertical-align: middle;
+    border: 0;
+    width: 16px;
+    position: relative;
+    top: -2px;
+}
+
+.img-circle {
+    border-radius: 50%;
+
 }
