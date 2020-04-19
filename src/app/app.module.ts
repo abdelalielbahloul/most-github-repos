@@ -10,12 +10,14 @@ import { FilterFormComponent } from './components/filter-form/filter-form.compon
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule } from "@angular/common/http";
 import { DetailsDialogComponent } from './components/details-dialog/details-dialog.component';
+import { DateAgoPipe } from './pipes/date-ago.pipe';
 @NgModule({
   declarations: [
     AppComponent,
     ReposComponent,
     FilterFormComponent,
-    DetailsDialogComponent
+    DetailsDialogComponent,
+    DateAgoPipe
   ],
   imports: [
     BrowserModule,
