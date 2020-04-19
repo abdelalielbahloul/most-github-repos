@@ -24,6 +24,6 @@ export class GithubRepos {
     open_issues: number;
     watchers: number;
     default_branch: string;
-    license: License
+    license: License;
     
 }

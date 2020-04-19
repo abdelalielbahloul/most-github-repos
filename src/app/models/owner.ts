@@ -3,7 +3,7 @@ export class Owner {
     id: number;
     node_id: string;
     avatar_url: string;
-    html_url: "https://github.com/nytimes";
+    html_url: string;
     repos_url: string;
     type: string;
 }
