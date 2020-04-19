@@ -14,3 +14,4 @@ This Project is created using :
 
 ## Images
 <img src="assets/1.png">
+![](assets/1.png)
