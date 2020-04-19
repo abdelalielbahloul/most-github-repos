@@ -28,7 +28,10 @@ export class FilterFormComponent implements OnInit {
 
   submit() {
     this.sendData = this.data;
-    
+    this.data = {
+      sortDate: new Date(),
+      sortValue: 'stars'
+    }
   }
 
 }
