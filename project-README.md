@@ -1,5 +1,5 @@
 # most-github-repos
-> This project list the most Github repos filtered by stars, forks and updated that were created until a    choosen date. We'll fetching the sorted JSON data directly from the Github API
+> This project list the most Github repos filtered by stars, forks and updated that were created from a    choosen date. We'll fetching the sorted JSON data directly from the Github API
 
 ## Libraries and Tools
 This Project is created using :
