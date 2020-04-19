@@ -12,6 +12,7 @@ import { HttpClientModule } from "@angular/common/http";
 import { DetailsDialogComponent } from './components/details-dialog/details-dialog.component';
 import { DateAgoPipe } from './pipes/date-ago.pipe';
 import { ToastrModule } from 'ngx-toastr';
+import { NumberPipePipe } from './pipes/number-pipe.pipe';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { ToastrModule } from 'ngx-toastr';
     ReposComponent,
     FilterFormComponent,
     DetailsDialogComponent,
-    DateAgoPipe
+    DateAgoPipe,
+    NumberPipePipe
   ],
   imports: [
     BrowserModule,

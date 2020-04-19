@@ -22,8 +22,8 @@
                     
                 <mat-grid-tile-footer>
                     <mat-chip-list aria-label="Fish selection">
-                        <span style="color: #000000;font-weight: bold;">Open Issues:</span><mat-chip color="primary" selected>{{ detailsData.open_issues }}</mat-chip>
-                        <span style="color: #000000;font-weight: bold;">Watchers:</span><mat-chip color="primary" selected>{{ detailsData.nb_watchers }}</mat-chip>
+                        <span style="color: #000000;font-weight: bold;">Open Issues:</span><mat-chip color="primary" selected>{{ detailsData.open_issues | numberPipe }}</mat-chip>
+                        <span style="color: #000000;font-weight: bold;">Watchers:</span><mat-chip color="primary" selected>{{ detailsData.nb_watchers | numberPipe }}</mat-chip>
 
                     </mat-chip-list>
                 </mat-grid-tile-footer>
