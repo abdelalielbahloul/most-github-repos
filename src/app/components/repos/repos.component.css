@@ -57,3 +57,11 @@ img {
     border-radius: 50%;
 
 }
+
+.Organization {
+    color: orange;
+}
+
+.User {
+    color: #00B4AB;
+}

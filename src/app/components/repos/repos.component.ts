@@ -1,12 +1,15 @@
 import { RepositoryService } from './../../services/repository.service';
-import { Component, OnInit, ViewChild, Input, OnChanges, DoCheck, AfterViewChecked, AfterContentInit } from '@angular/core';
+import { Component, OnInit, ViewChild, Input, OnChanges, DoCheck, AfterViewChecked, AfterContentInit, Inject } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
 import { GithubAPI } from 'src/app/models/github-api';
 import { merge, Observable, of as observableOf } from 'rxjs';
-import {catchError, map, startWith, switchMap} from 'rxjs/operators';
-
+import { catchError, map, startWith, switchMap } from 'rxjs/operators';
+import { MatDialog } from '@angular/material/dialog';
+import { DetailsRepo } from 'src/app/models/details-repo';
+import { DetailsDialogComponent } from '../details-dialog/details-dialog.component';
+import { GithubRepos } from 'src/app/models/github-repos';
 
 @Component({
   selector: 'app-repos',
@@ -16,15 +19,25 @@ import {catchError, map, startWith, switchMap} from 'rxjs/operators';
 export class ReposComponent implements OnInit, OnChanges, AfterContentInit {
 
   ELEMENT_DATA: GithubAPI[] = []
+  details: DetailsRepo = {
+    id: 0,
+    avatar: '',
+    name: '',
+    default_branch: '',
+    description: '',
+    license: '',
+    nb_watchers: 0,
+    open_issues: 0,
+    owner_name: '',
+    submited_time: null
+  }
   resultsLength: number = 0;
   isLoadingResults = true;
   isRateLimitReached = false;
-  constructor(private api: RepositoryService) { }
+  constructor(private api: RepositoryService, private dialog: MatDialog) { }
 
   displayedColumns: string[] = ['name', 'owner', 'type', 'created_at', 'stargazers_count', 'open_issues_count', 'forks_count', 'language', 'size', 'actions'];
   dataSource = new MatTableDataSource(this.ELEMENT_DATA) || null;
-  
-  
 
   @Input('data') data = {
     sortDate: new Date(),
@@ -37,7 +50,7 @@ export class ReposComponent implements OnInit, OnChanges, AfterContentInit {
   ngOnInit(): void {
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;    
-    this.init();
+    // this.init();
   }
 
   /**
@@ -65,10 +78,28 @@ export class ReposComponent implements OnInit, OnChanges, AfterContentInit {
   // filter(filterText: String) {
   //   this.dataSource.filter = filterText.trim().toLocaleLowerCase();
   // }
-  // show(element) {
-  //   console.log(element);
+  openDialog(repo: GithubRepos): void {
+    // const dialogRef = 
     
-  // }
+    this.details = {
+      id: repo.id,
+      avatar: repo.owner.avatar_url,
+      name: repo.name,
+      description: repo.description,
+      default_branch: repo.default_branch,
+      license: repo.license.name,
+      nb_watchers: repo.watchers_count,
+      open_issues: repo.open_issues,
+      owner_name: repo.owner.login,
+      submited_time: repo.pushed_at
+    }
+    this.dialog.open(DetailsDialogComponent, {
+      width: '75%',
+      data: this.details
+    });
+
+  }
+
 
   init() {
     this.data = {

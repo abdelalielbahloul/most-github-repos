@@ -27,7 +27,7 @@
       <ng-container matColumnDef="type">
         <th mat-header-cell *matHeaderCellDef> Type </th>
         <td mat-cell *matCellDef="let element">
-          {{element.owner.type}} 
+          <span [class]="element.owner.type">{{element.owner.type}}</span>
         </td>
       </ng-container>
       
@@ -81,7 +81,7 @@
       <ng-container colspan="3" matColumnDef="actions">
         <th mat-header-cell *matHeaderCellDef></th>
         <td mat-cell *matCellDef="let element">
-          <button mat-icon-button title="Details">
+          <button mat-icon-button title="Details" (click)="openDialog(element)">
             <mat-icon>visibility</mat-icon>
           </button>
           <button mat-icon-button title="Clone">
