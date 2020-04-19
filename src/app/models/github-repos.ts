@@ -26,5 +26,6 @@ export class GithubRepos {
     watchers: number;
     default_branch: string;
     license: License;
+    color: string;
     
 }
