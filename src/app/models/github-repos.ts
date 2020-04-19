@@ -22,6 +22,7 @@ export class GithubRepos {
     language: string;
     forks: number;
     open_issues: number;
+    open_issues_count: number;
     watchers: number;
     default_branch: string;
     license: License;
