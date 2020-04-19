@@ -17,8 +17,5 @@ export class DetailsDialogComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onNoClick(): void {
-    this.dialogRef.close();
-  }
 
 }

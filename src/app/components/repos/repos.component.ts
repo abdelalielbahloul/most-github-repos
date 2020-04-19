@@ -85,8 +85,8 @@ export class ReposComponent implements OnInit, OnChanges, AfterContentInit {
   // filter(filterText: String) {
   //   this.dataSource.filter = filterText.trim().toLocaleLowerCase();
   // }
-  copyCloneMsg(msg : string){
-    this.tostr.success(msg, "Copied", {
+  copyCloneMsg(){
+    this.tostr.success('Clone url has compied to clipboard', "Copied", {
       timeOut: 3000,
       positionClass: 'toast-top-right'
     });
