@@ -84,7 +84,11 @@
           <button mat-icon-button title="Details" (click)="openDialog(element)">
             <mat-icon>visibility</mat-icon>
           </button>
-          <button mat-icon-button title="Clone">
+          <button 
+            mat-icon-button title="Clone" 
+            [cdkCopyToClipboard]="element.clone_url" 
+            (click)="copyCloneMsg('Clone url has compied to clipboard')"
+          >
             <mat-icon>file_copy</mat-icon>
           </button>
           

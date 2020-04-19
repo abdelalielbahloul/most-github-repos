@@ -10,6 +10,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { DetailsRepo } from 'src/app/models/details-repo';
 import { DetailsDialogComponent } from '../details-dialog/details-dialog.component';
 import { GithubRepos } from 'src/app/models/github-repos';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-repos',
@@ -34,7 +35,13 @@ export class ReposComponent implements OnInit, OnChanges, AfterContentInit {
   resultsLength: number = 0;
   isLoadingResults = true;
   isRateLimitReached = false;
-  constructor(private api: RepositoryService, private dialog: MatDialog) { }
+
+
+  constructor(
+    private api: RepositoryService, 
+    private dialog: MatDialog, 
+    private tostr: ToastrService
+  ) { }
 
   displayedColumns: string[] = ['name', 'owner', 'type', 'created_at', 'stargazers_count', 'open_issues_count', 'forks_count', 'language', 'size', 'actions'];
   dataSource = new MatTableDataSource(this.ELEMENT_DATA) || null;
@@ -78,6 +85,12 @@ export class ReposComponent implements OnInit, OnChanges, AfterContentInit {
   // filter(filterText: String) {
   //   this.dataSource.filter = filterText.trim().toLocaleLowerCase();
   // }
+  copyCloneMsg(msg : string){
+    this.tostr.success(msg, "Copied", {
+      timeOut: 3000,
+      positionClass: 'toast-top-right'
+    });
+  } 
   openDialog(repo: GithubRepos): void {
     // const dialogRef = 
     
@@ -87,7 +100,7 @@ export class ReposComponent implements OnInit, OnChanges, AfterContentInit {
       name: repo.name,
       description: repo.description,
       default_branch: repo.default_branch,
-      license: repo.license.name,
+      license: repo.license != null ? repo.license.name : 'No License',
       nb_watchers: repo.watchers_count,
       open_issues: repo.open_issues,
       owner_name: repo.owner.login,
