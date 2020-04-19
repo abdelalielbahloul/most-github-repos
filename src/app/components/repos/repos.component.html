@@ -40,7 +40,7 @@
         <th mat-header-cell *matHeaderCellDef mat-sort-header> Stars </th>
         <td mat-cell *matCellDef="let element"> 
           <mat-chip-list aria-label="Fish selection">
-            <mat-chip>{{element.stargazers_count | numberPipe }}</mat-chip>
+            <mat-chip>{{ element.stargazers_count | numberPipe }}</mat-chip>
           </mat-chip-list>
            
         </td>
@@ -50,7 +50,7 @@
         <th mat-header-cell *matHeaderCellDef> Issues </th>
         <td mat-cell *matCellDef="let element"> 
           <mat-chip-list aria-label="Fish selection">
-            <mat-chip>{{element.open_issues_count | numberPipe }}</mat-chip>
+            <mat-chip>{{ element.open_issues_count | numberPipe }}</mat-chip>
           </mat-chip-list>
           
         </td>
@@ -60,7 +60,7 @@
         <th mat-header-cell *matHeaderCellDef> Forks </th>
         <td mat-cell *matCellDef="let element"> 
           <mat-chip-list aria-label="Fish selection">
-            <mat-chip>{{element.forks_count | numberPipe }}</mat-chip>
+            <mat-chip>{{ element.forks_count | numberPipe }}</mat-chip>
           </mat-chip-list>
            
         </td>

@@ -68,21 +68,25 @@ export class ReposComponent implements OnInit, OnChanges, AfterContentInit {
   ngOnInit(): void {
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;    
+
   }
 
   /**
    * fetching data with default infos in loading of page
    */
   ngAfterContentInit(): void {
-    this.fetch()
-    this.getLanguageColor('Python');
+    const created = this.formateDate()
+    this.fetch(created)
   }
 
   /**
    *  fetching data after any submit of form with new infos
    */
   ngOnChanges(): void {    
-    this.fetch()
+
+    const created = this.formateDate()
+    this.fetch(created)
+    // this.formateDate()
   }
   
   /**
@@ -124,16 +128,15 @@ export class ReposComponent implements OnInit, OnChanges, AfterContentInit {
   /**
    * Fetching data from the guthub repo service
    */
-  fetch() {
+  fetch(created: string) {
     merge(this.sort.sortChange, this.paginator.page)
     .pipe(
       startWith({}),
       switchMap(() => {
         this.isLoadingResults = true;
-        
         return this.api!._getRepos(
-          "2020-03-19", 
-          this.data.sortValue, this.sort.direction || 'desc', 
+          created, 
+          this.data.sortValue != undefined ? this.data.sortValue : 'stars', this.sort.direction || 'desc', 
           this.paginator.pageIndex
         );
       }),
@@ -152,18 +155,30 @@ export class ReposComponent implements OnInit, OnChanges, AfterContentInit {
         return observableOf([]);
       })
     ).subscribe(data => {     
-        data.forEach(el => el.color = el.language != null ? this.getLanguageColor(el.language) : null)
+      data.forEach(el => el.color = el.language != null ? this.getLanguageColor(el.language) : null)
       this.dataSource = new MatTableDataSource(data);
       
     });
   }
-
+/**
+ * Formate Date to accessible date in github API
+ */
   formateDate(): string {
-    // {year: "numeric", month: "2-digit", day: "2-digit"}
-    let year = this.data.sortDate.getFullYear();
-    let mounth = this.data.sortDate.getMonth();
-    let day = this.data.sortDate.getDate()
-    return `${year}-0${mounth + 1}-0${day}`
+    const date = this.data.sortDate != undefined ? new Date(this.data.sortDate) : new Date() 
+    let year = date.getFullYear();
+    let mounth = date.getMonth();
+    let day = date.getDate();    
+    var parsedMounth, parsedDay;
+    if ((mounth / 10) < 1)
+      parsedMounth = `0${mounth}`
+    else 
+      parsedMounth = mounth
+    if ((day / 10) < 1) 
+      parsedDay = `0${day}`
+    else 
+      parsedDay = day
+    
+    return `${year}-${parsedMounth}-${parsedDay}`
   }
 
   /**

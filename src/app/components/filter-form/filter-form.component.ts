@@ -19,7 +19,7 @@ export class FilterFormComponent implements OnInit {
   dateControl = new FormControl('', Validators.required);
   sortData = ['stars', 'forks', 'updated']
   
-  maxDate = new Date();
+  maxDate =  new Date();
   minDate = new Date(2008, 4, 10) // Github Creation date
   constructor() { }
 
