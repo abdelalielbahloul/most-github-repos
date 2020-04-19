@@ -16,7 +16,7 @@
                     <mat-divider></mat-divider>
                     <mat-list-item> <strong>Default Branch:</strong>&nbsp;&nbsp; {{detailsData.default_branch}} </mat-list-item>
                     <mat-divider></mat-divider>
-                    <mat-list-item> <strong>Submited:</strong>&nbsp;&nbsp; {{detailsData.submited_time}} By {{detailsData.owner_name}} </mat-list-item>
+                    <mat-list-item> <strong>Submited:</strong>&nbsp;&nbsp; {{detailsData.submited_time | dateAgo}} By {{detailsData.owner_name}} </mat-list-item>
 
                 </mat-list>
                     
