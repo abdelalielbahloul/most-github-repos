@@ -75,18 +75,14 @@ export class ReposComponent implements OnInit, OnChanges, AfterContentInit {
    * fetching data with default infos in loading of page
    */
   ngAfterContentInit(): void {
-    const created = this.formateDate()
-    this.fetch(created)
+    this.fetch()
   }
 
   /**
    *  fetching data after any submit of form with new infos
    */
   ngOnChanges(): void {    
-
-    const created = this.formateDate()
-    this.fetch(created)
-    // this.formateDate()
+    this.fetch()
   }
   
   /**
@@ -128,15 +124,16 @@ export class ReposComponent implements OnInit, OnChanges, AfterContentInit {
   /**
    * Fetching data from the guthub repo service
    */
-  fetch(created: string) {
+  fetch() {
     merge(this.sort.sortChange, this.paginator.page)
     .pipe(
       startWith({}),
       switchMap(() => {
         this.isLoadingResults = true;
         return this.api!._getRepos(
-          created, 
-          this.data.sortValue != undefined ? this.data.sortValue : 'stars', this.sort.direction || 'desc', 
+          this.formateDate(), 
+          this.data.sortValue != undefined ? this.data.sortValue : 'stars', 
+          this.sort.direction || 'desc', 
           this.paginator.pageIndex
         );
       }),
