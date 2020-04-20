@@ -13,4 +13,8 @@ This Project is created using :
 3. Run `ng serve -o` The project will run in the development mode on `http://localhost:4200/`
 
 ## Images
-![](1.png)
+<img src="assets/1.png" alt="image 1"/>
+<img src="assets/2.png" alt="image 2"/>
+<img src="assets/3.png" alt="image 3"/>
+<img src="assets/4.png" alt="image 4"/>
+
