@@ -1,10 +1,10 @@
 import { RepositoryService } from './../../services/repository.service';
-import { Component, OnInit, ViewChild, Input, OnChanges, DoCheck, AfterViewChecked, AfterContentInit, Inject } from '@angular/core';
+import { Component, OnInit, ViewChild, Input, OnChanges, AfterContentInit } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
 import { GithubAPI } from 'src/app/models/github-api';
-import { merge, Observable, of as observableOf } from 'rxjs';
+import { merge, of as observableOf } from 'rxjs';
 import { catchError, map, startWith, switchMap } from 'rxjs/operators';
 import { MatDialog } from '@angular/material/dialog';
 import { DetailsRepo } from 'src/app/models/details-repo';

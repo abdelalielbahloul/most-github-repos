@@ -84,6 +84,7 @@
           <button mat-icon-button title="Details" (click)="openDialog(element)">
             <mat-icon>visibility</mat-icon>
           </button>
+          
           <button 
             mat-icon-button title="Clone" 
             [cdkCopyToClipboard]="element.clone_url" 
@@ -92,11 +93,9 @@
             <mat-icon>file_copy</mat-icon>
           </button>
           
-          <!-- <button mat-icon-button> -->
-            <a mat-icon-button [href]="element.html_url" target="_blank" title="View in Github">
-              <mat-icon>open_in_new</mat-icon>
-            </a>
-          <!-- </button> -->
+          <a mat-icon-button [href]="element.html_url" target="_blank" title="View in Github">
+            <mat-icon>open_in_new</mat-icon>
+          </a>
         </td>
       </ng-container>
     

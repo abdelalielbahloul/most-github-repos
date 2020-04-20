@@ -15,7 +15,7 @@
         <mat-select [formControl]="sortControl" required [(ngModel)]="data.sortValue">
             <mat-option>--</mat-option>
             <mat-option *ngFor="let item of sortData" [value]="item">
-                {{item}}
+                {{ item }}
             </mat-option>
         </mat-select>
         <mat-error *ngIf="sortControl.hasError('required')">Please choose a sort option</mat-error>

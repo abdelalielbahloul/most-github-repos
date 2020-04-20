@@ -8,11 +8,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSortModule } from '@angular/material/sort';
 import { MatButtonModule } from '@angular/material/button';
 import { MAT_DATE_LOCALE, DateAdapter, MAT_DATE_FORMATS } from '@angular/material/core';
-import {
-  MAT_MOMENT_DATE_FORMATS,
-  MomentDateAdapter,
-  MAT_MOMENT_DATE_ADAPTER_OPTIONS
-} from '@angular/material-moment-adapter';
+import { MomentDateAdapter, MAT_MOMENT_DATE_ADAPTER_OPTIONS } from '@angular/material-moment-adapter';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatSelectModule } from '@angular/material/select';
@@ -24,10 +20,6 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatListModule } from '@angular/material/list';
 import { ClipboardModule } from '@angular/cdk/clipboard';
-
-
-
-
 
 const materialModules = [
   MatTableModule,
@@ -68,9 +60,6 @@ const materialModules = [
     },
     {
       provide: MAT_DATE_FORMATS, useValue: {
-        parse: {
-          // dateInput: ['l', 'LL'],
-        },
         display: {
           dateInput: 'L',
           monthYearLabel: 'MMM YYYY',
@@ -81,13 +70,4 @@ const materialModules = [
     }
   ]
 })
-export class MaterialModule {
-  // /**
-  //  *
-  //  */
-  // constructor(private _adapter: DateAdapter<any>) {}
-
-  // french() {
-  //   this._adapter.setLocale('fr');
-  // }
-}
+export class MaterialModule { }
