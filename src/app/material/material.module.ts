@@ -20,6 +20,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatListModule } from '@angular/material/list';
 import { ClipboardModule } from '@angular/cdk/clipboard';
+import { MatMenuModule } from '@angular/material/menu';
 
 const materialModules = [
   MatTableModule,
@@ -39,7 +40,8 @@ const materialModules = [
   MatDialogModule,
   MatGridListModule,
   MatListModule,
-  ClipboardModule
+  ClipboardModule,
+  MatMenuModule
 ]
 
 @NgModule({

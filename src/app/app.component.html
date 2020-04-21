@@ -1,5 +1,20 @@
 <!-- <router-outlet></router-outlet> -->
 <mat-toolbar>
     <span>Most Github Repositories</span>
+    <span class="example-spacer"></span>
+    <button mat-button [matMenuTriggerFor]="menu">
+      <i class="fa fa-github" aria-hidden="true"></i> Github <mat-icon class="mat-18">more_vert</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <a mat-button href="https://github.com/abdelalielbahloul/most-github-repos" target="_blank">
+        Contribute
+      </a>
+      <br>
+      <mat-divider></mat-divider>
+      <a mat-button href="https://developer.github.com/v3/" target="_blank">
+        Data Source
+      </a>
+    </mat-menu>
+
   </mat-toolbar>
 <app-filter-form></app-filter-form>

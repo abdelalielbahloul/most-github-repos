@@ -1,0 +1,22 @@
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+button {
+    font-size: 18px;
+    font-weight: bold;
+    height: 100%;
+}
+
+button:hover {
+    background-color: transparent !important;
+    border: transparent !important;
+}
+
+i {
+    font-size: 25px !important;
+}
+
+a {
+    width: 100%;
+}
