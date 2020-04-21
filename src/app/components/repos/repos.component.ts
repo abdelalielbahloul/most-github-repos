@@ -35,7 +35,7 @@ export class ReposComponent implements OnInit, OnChanges, AfterContentInit {
   resultsLength: number = 0;
   isLoadingResults = true;
   isRateLimitReached = false;
-
+  now = new Date().getFullYear()
 
   constructor(
     private api: RepositoryService, 
@@ -119,6 +119,17 @@ export class ReposComponent implements OnInit, OnChanges, AfterContentInit {
       data: this.details
     });
 
+  }
+
+  /**
+   * Filter the data table
+   */
+  applyFilter(filterText: string) {
+    this.dataSource.filter = filterText.trim().toLowerCase();
+
+    if (this.dataSource.paginator) {
+      this.dataSource.paginator.firstPage()
+    }
   }
 
   /**

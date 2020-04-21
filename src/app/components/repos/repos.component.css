@@ -65,3 +65,17 @@ img {
 .User {
     color: #00B4AB;
 }
+
+.footer {
+    font-weight: bold;
+    margin-left: 2%;
+}
+.mat-elevation-z8 {
+    box-shadow: none;
+}
+
+.mat-form-field {
+    font-size: 14px;
+    width: 25%;
+    margin-left: 1%;
+  }

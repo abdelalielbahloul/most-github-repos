@@ -6,6 +6,13 @@
         GitHub's API rate limit has been reached. It will be reset in one minute.
       </div>
   </div>
+  <mat-form-field>
+    <mat-label>Filter</mat-label>
+    <input matInput (keyup)="applyFilter($event.target.value)"placeholder="Ex. code or name ..">
+    <button mat-button disabled matSuffix mat-icon-button aria-label="Search icon">
+      <mat-icon>search</mat-icon>
+    </button>
+  </mat-form-field>  
   <div class="example-table-container">
     <table mat-table [dataSource]="dataSource" matSort class="example-table">
 
@@ -106,3 +113,4 @@
   </div>
 </div>
 <mat-paginator [length]="resultsLength" [pageSize]="30"></mat-paginator>
+<span class="footer">Copyright &copy; {{ now }} By EL BAHLOUL Abdelali</span>
