@@ -2,6 +2,11 @@
     flex: 1 1 auto;
 }
 
+.toolbar-title {
+    font-size: 25px;
+    font-weight: bold;
+}
+
 button {
     font-size: 18px;
     font-weight: bold;
@@ -19,4 +24,8 @@ i {
 
 a {
     width: 100%;
+}
+
+mat-toolbar {
+    background-color: #ffffff;
 }
