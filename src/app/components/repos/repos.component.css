@@ -68,7 +68,7 @@ img {
 
 .footer {
     font-weight: bold;
-    margin-left: 2%;
+    font-size: small;
 }
 .mat-elevation-z8 {
     box-shadow: none;
@@ -78,4 +78,15 @@ img {
     font-size: 14px;
     width: 25%;
     margin-left: 1%;
-  }
+}
+
+mat-toolbar {
+    background-color: #ffffff;
+}
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+mat-toolbar > a {
+    margin-right: 1%;
+}
