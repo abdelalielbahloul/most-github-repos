@@ -18,3 +18,6 @@ This Project is created using :
 <img src="assets/3.png" alt="image 3"/>
 <img src="assets/4.png" alt="image 4"/>
 
+## Links 
+1. netlify page: <a href="https://most-github-repos.netlify.app/" target="_blank">netlify</a>
+2. Or: <a href="http://most-github-repos.abdelalielbahloul.epizy.com/" target="_blank">epizy</a>
