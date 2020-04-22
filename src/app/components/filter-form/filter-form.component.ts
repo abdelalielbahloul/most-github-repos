@@ -20,10 +20,12 @@ export class FilterFormComponent implements OnInit {
   sortData = ['stars', 'forks', 'updated']
   
   maxDate =  new Date();
-  minDate = new Date(2008, 4, 10) // Github Creation date
+  minDate = new Date();
   constructor() { }
 
   ngOnInit(): void {
+    this.minDate.setMonth(this.minDate.getMonth() - 2, this.minDate.getDate())
+    
   }
 
   submit() {
@@ -32,6 +34,7 @@ export class FilterFormComponent implements OnInit {
       sortDate: new Date(),
       sortValue: 'stars'
     }
+    
   }
 
 }
