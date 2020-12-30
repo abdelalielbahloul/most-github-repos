@@ -3,7 +3,7 @@
 
 ## Libraries and Tools
 This Project is created using :
-+ Angular version 9.1.1. Updated to v10
++ Angular version 9.1.1. Updated to v11
 + Angular Material
 + Github API
 
@@ -14,3 +14,9 @@ This Project is created using :
 
 ## Links 
 1. netlify page: <a href="https://most-github-repos.netlify.app/" target="_blank">netlify</a>
+## License
+MIT License
+
+Copyright (c) 2020 Abdelali el bahloul
+
+License: <a href="https://github.com/abdelalielbahloul/most-github-repos/blob/master/LICENSE" target="_blank">license</a>
