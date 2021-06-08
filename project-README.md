@@ -3,7 +3,7 @@
 
 ## Libraries and Tools
 This Project is created using :
-+ Angular version 9.1.1. Updated to v11
++ Angular version 9.1.1. Updated to v12
 + Angular Material
 + Github API
 
